@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Sidebars</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/icons/icon.css">
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/parallax.js"></script>
+</head>
+
+<body>
+
+<div class="ui container">
+
+<!-- Basic Menu Left -->
+  <div class="ui sidebar left inverted vertical menu" id="basicmenuleft">
+    <a class="item">1</a>
+    <a class="item">2</a>
+    <a class="item">3</a>
+  </div>
+
+<!-- Basic Menu Right -->
+  <div class="ui sidebar right inverted vertical menu" id="basicmenuright">
+    <a class="item">1</a>
+    <a class="item">2</a>
+    <a class="item">3</a>
+  </div>
+
+<!-- Top Menu -->
+<div class="ui top demo sidebar ui segment" id="topmenu">
+  <div class="ui center aligned page grid">
+    <div class="one column row">
+      <div class="sixteen wide column"><h3 class="ui header">New Content Awaits</h3></div>
+    </div>
+    <div class="three column divided row">
+      <div class="column"><img class="ui wireframe image" src="/images/wireframe/media-paragraph.png"></div>
+      <div class="column"><img class="ui wireframe image" src="/images/wireframe/media-paragraph.png"></div>
+      <div class="column"><img class="ui wireframe image" src="/images/wireframe/media-paragraph.png"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Menu -->
+<div class="ui bottom demo inverted nine item labeled icon sidebar menu" id="bottommenu">
+  <a class="item"><i class="home icon"></i>Home</a>
+  <a class="item"><i class="block layout icon"></i>Topics</a>
+  <a class="item"><i class="smile icon"></i>Friends</a>
+  <a class="item"><i class="calendar icon"></i>History</a>
+  <a class="item"><i class="mail icon"></i>Messages</a>
+  <a class="item"><i class="chat icon"></i>Discussions</a>
+  <a class="item"><i class="trophy icon"></i>Achievements</a>
+  <a class="item"><i class="shop icon"></i>Store</a>
+  <a class="item"><i class="settings icon"></i>Settings</a>
+</div>
+
+<!-- Icon Sidebar Menu Left -->
+    <div class="ui left demo vertical inverted sidebar labeled icon menu" id="invertedmenu-left">
+      <a class="item"><i class="home icon"></i>Home</a>
+      <a class="item"><i class="block layout icon"></i>Topics</a>
+      <a class="item"><i class="smile icon"></i>Friends</a>
+    </div>
+
+<!-- Icon Sidebar Menu Right -->
+    <div class="ui right demo vertical inverted sidebar labeled icon menu" id="invertedmenu-right">
+      <a class="item"><i class="home icon"></i>Home</a>
+      <a class="item"><i class="block layout icon"></i>Topics</a>
+      <a class="item"><i class="smile icon"></i>Friends</a>
+    </div>
+
+  <div class="pusher">
+    <!-- Site content !-->
+    <p>Site Content Goes here.</p>
+    <p><div class="ui button" id="basicmenubtnleft">Basic Menu - Left / Push</div></p>
+    <p><div class="ui button" id="basicmenubtnright">Basic Menu - Right / Overlay</div></p>
+    <p><div class="ui button" id="topmenubtn">Top Menu - Scale Down</div></p>
+    <p><div class="ui button" id="bottommenubtn">Bottom Menu</div></p>
+    <p><div class="ui button" id="invertedmenubtn-left">Inverted Menu Left</div></p>
+    <p><div class="ui button" id="invertedmenubtn-right">Inverted Menu Right</div></p>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+
+      // Basic Menu left with transition specified
+      $("#basicmenubtnleft").click(function(){
+        $('#basicmenuleft')
+        .sidebar('setting', 'transition', 'push')
+        .sidebar('toggle');
+      });
+
+      // Basic Menu right with transition specified
+      $("#basicmenubtnright").click(function(){
+        $('#basicmenuright')
+        .sidebar('setting', 'transition', 'overlay')
+        .sidebar('toggle');
+      });
+
+      // Top Menu with transition specified
+      $("#topmenubtn").click(function(){
+        $('#topmenu')
+        .sidebar('setting', 'transition', 'scale down')
+        .sidebar('toggle');
+      });
+
+      // Bottom Menu with default transition
+      $("#bottommenubtn").click(function(){
+        $('#bottommenu').sidebar('toggle');
+      });
+
+      // Inverted Icon Menu Left with default transition
+      $("#invertedmenubtn-left").click(function(){
+        $('#invertedmenu-left').sidebar('toggle');
+      });
+
+      // Inverted Icon Menu Left with default transition
+      $("#invertedmenubtn-right").click(function(){
+        $('#invertedmenu-right').sidebar('toggle');
+      });
+
+    });
+  </script>
+
+</div><!-- end container -->
+
+</body>
+
+</html>
